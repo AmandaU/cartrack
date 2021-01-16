@@ -12,16 +12,6 @@ import MapKit
 struct ContactView: View {
     @EnvironmentObject var contactStore: ContactStore
 
-    var region : MKCoordinateRegion {
-
-        let lat =  Double(self.contactStore.contact?.address.geo.lat ?? "") ?? 0
-        let lng =  Double(self.contactStore.contact?.address.geo.lng ?? "") ?? 0
-        return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:lat, longitude: lng), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    }
-
-    //    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-
-
     var body: some View {
         ZStack {
             Background()
@@ -29,41 +19,47 @@ struct ContactView: View {
                 HeaderComponent( title: "Contact")
 
                 ScrollView {
-                    VStack(alignment: .center, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Text(self.contactStore.contact?.name ?? "")
                             .font(.title)
                             .bold()
                             .padding(.horizontal)
                             .foregroundColor(Color.white)
                             .lineLimit(nil)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
-                        Text(self.contactStore.contact?.email ?? "")
+                        Text("Email: \(self.contactStore.contact?.email ?? "")")
                             .bold()
                             .lineLimit(nil)
                             .padding(.horizontal)
                             .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
-                        Text(self.contactStore.contact?.phone ?? "")
+                        Text("Phone: \(self.contactStore.contact?.phone ?? "")")
                             .bold()
                             .lineLimit(nil)
                             .padding(.horizontal)
                             .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
-                        Text(self.contactStore.contact?.company.name ?? "")
+                        Text("Location: \(self.contactStore.contact?.address.geo.lat ?? "") : \(self.contactStore.contact?.address.geo.lng ?? "")")
+                            .bold()
+                            .lineLimit(nil)
+                            .padding(.horizontal)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Text("Company: \(self.contactStore.contact?.company.name ?? "")")
                             .font(.body)
                             .bold()
                             .lineLimit(nil)
                             .padding(.horizontal)
                             .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    MapView(region: self.region)
+                    MapView()
                         .frame(width: .infinity, height: UIScreen.main.bounds.height/2, alignment: .top)
-
                 }
             }
         }
@@ -71,11 +67,35 @@ struct ContactView: View {
 }
 
 private struct MapView: View {
-    @State var region: MKCoordinateRegion
+    @EnvironmentObject var contactStore: ContactStore
+
+    var lat: Double {
+        return Double(self.contactStore.contact?.address.geo.lat ?? "") ?? 0
+    }
+
+    var lon:  Double {
+        return  Double(self.contactStore.contact?.address.geo.lng ?? "") ?? 0
+    }
+
+    var region : MKCoordinateRegion {
+        return MKCoordinateRegion(center: self.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    }
+
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.lat, longitude: self.lon)
+    }
+
+    var annotationItems: [MyAnnotationItem] {
+        return [ MyAnnotationItem(coordinate: self.coordinate)]
+    }
 
     var body: some View {
-        Map(coordinateRegion: $region)
-            .padding()
+        Map(coordinateRegion: .constant(self.region),
+            annotationItems: self.annotationItems) {item in
+            MapPin(coordinate: item.coordinate)
+        }
+
+        .padding()
     }
 }
 
@@ -85,6 +105,11 @@ private struct Background: View {
             .fill(Color("orange"))
             .edgesIgnoringSafeArea(.all)
     }
+}
+
+struct MyAnnotationItem: Identifiable {
+    var coordinate: CLLocationCoordinate2D
+    let id = UUID()
 }
 
 
