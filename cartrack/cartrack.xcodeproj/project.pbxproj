@@ -13,6 +13,15 @@
 		AA7F730F25B310FF0005182D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7F730E25B310FF0005182D /* Preview Assets.xcassets */; };
 		AA7F731A25B311000005182D /* cartrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F731925B311000005182D /* cartrackTests.swift */; };
 		AA7F732525B311000005182D /* cartrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F732425B311000005182D /* cartrackUITests.swift */; };
+		AA7F733625B311D40005182D /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F733525B311D40005182D /* BottomSheetView.swift */; };
+		AA7F733E25B3122C0005182D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F733D25B3122C0005182D /* LoginView.swift */; };
+		AA7F734D25B3139A0005182D /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = AA7F734C25B3139A0005182D /* countries.json */; };
+		AA7F735225B313F50005182D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F735125B313F50005182D /* MainView.swift */; };
+		AA7F736025B314860005182D /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F735F25B314860005182D /* ViewComponent.swift */; };
+		AA7F736625B314AA0005182D /* NavigationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F736525B314AA0005182D /* NavigationStore.swift */; };
+		AA7F736E25B316440005182D /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F736D25B316440005182D /* BlankView.swift */; };
+		AA7F737325B31B3C0005182D /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F737225B31B3C0005182D /* LoginStore.swift */; };
+		AA7F737C25B322120005182D /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F737B25B322120005182D /* BindingExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,15 @@
 		AA7F732025B311000005182D /* cartrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cartrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7F732425B311000005182D /* cartrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartrackUITests.swift; sourceTree = "<group>"; };
 		AA7F732625B311000005182D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA7F733525B311D40005182D /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		AA7F733D25B3122C0005182D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AA7F734C25B3139A0005182D /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		AA7F735125B313F50005182D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AA7F735F25B314860005182D /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
+		AA7F736525B314AA0005182D /* NavigationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStore.swift; sourceTree = "<group>"; };
+		AA7F736D25B316440005182D /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		AA7F737225B31B3C0005182D /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
+		AA7F737B25B322120005182D /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +113,11 @@
 		AA7F730625B310FD0005182D /* cartrack */ = {
 			isa = PBXGroup;
 			children = (
+				AA7F737A25B322020005182D /* Extensions */,
+				AA7F736425B3149A0005182D /* Stores */,
+				AA7F734B25B313590005182D /* Views */,
+				AA7F734A25B313540005182D /* Data */,
 				AA7F730725B310FD0005182D /* cartrackApp.swift */,
-				AA7F730925B310FD0005182D /* ContentView.swift */,
 				AA7F730B25B310FF0005182D /* Assets.xcassets */,
 				AA7F731025B310FF0005182D /* Info.plist */,
 				AA7F730D25B310FF0005182D /* Preview Content */,
@@ -128,6 +149,52 @@
 				AA7F732625B311000005182D /* Info.plist */,
 			);
 			path = cartrackUITests;
+			sourceTree = "<group>";
+		};
+		AA7F734A25B313540005182D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F734C25B3139A0005182D /* countries.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AA7F734B25B313590005182D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F735625B314620005182D /* Components */,
+				AA7F733D25B3122C0005182D /* LoginView.swift */,
+				AA7F733525B311D40005182D /* BottomSheetView.swift */,
+				AA7F730925B310FD0005182D /* ContentView.swift */,
+				AA7F735125B313F50005182D /* MainView.swift */,
+				AA7F736D25B316440005182D /* BlankView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA7F735625B314620005182D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F735F25B314860005182D /* ViewComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AA7F736425B3149A0005182D /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F736525B314AA0005182D /* NavigationStore.swift */,
+				AA7F737225B31B3C0005182D /* LoginStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		AA7F737A25B322020005182D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F737B25B322120005182D /* BindingExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7F734D25B3139A0005182D /* countries.json in Resources */,
 				AA7F730F25B310FF0005182D /* Preview Assets.xcassets in Resources */,
 				AA7F730C25B310FF0005182D /* Assets.xcassets in Resources */,
 			);
@@ -261,6 +329,14 @@
 			files = (
 				AA7F730A25B310FD0005182D /* ContentView.swift in Sources */,
 				AA7F730825B310FD0005182D /* cartrackApp.swift in Sources */,
+				AA7F736025B314860005182D /* ViewComponent.swift in Sources */,
+				AA7F733E25B3122C0005182D /* LoginView.swift in Sources */,
+				AA7F735225B313F50005182D /* MainView.swift in Sources */,
+				AA7F737C25B322120005182D /* BindingExtension.swift in Sources */,
+				AA7F737325B31B3C0005182D /* LoginStore.swift in Sources */,
+				AA7F736E25B316440005182D /* BlankView.swift in Sources */,
+				AA7F733625B311D40005182D /* BottomSheetView.swift in Sources */,
+				AA7F736625B314AA0005182D /* NavigationStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

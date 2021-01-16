@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var navigationStore:  NavigationStore
 
     @State var bottomSheetShown = false
 
     var body: some View {
 
-        ZStack {
-            GeometryReader { geometry in
-                Text("Hello, world!")
-                    .padding()
-                if self.bottomSheetShown {
-                    BottomSheetView(
-                        isOpen: self.$bottomSheetShown,
-                        maxHeight: geometry.size.height * 0.88
-
-                    ) {
-                        ScrollView {
-                            LoginView()
-                        }
-                    }
-                }
-            }
+        ZStack{
+           ViewComponent(screen: .none, view: AnyView(BlankView()))
+            ViewComponent(screen: .main, view: AnyView(MainView()))
+//            ViewComponent(screen: .user, view: AnyView(BlankView()))
+//            ViewComponent(screen: .users, view: AnyView(BlankView()))
+//            ViewComponent(screen: .map, view: AnyView(BlankView()))
         }
-    }
+        .onAppear {
+            self.navigationStore.navigate(screen: .main)
+        }
+//
+
+     }
 }
 
 struct ContentView_Previews: PreviewProvider {
