@@ -15,6 +15,7 @@ class LoginStore: ObservableObject {
     @Published var errors = [Error]()
     @Published var isValid = true
     @Published var canLogin = false
+
     private var countryList = [String]()
 
     var db: SQLiteDatabase?
@@ -34,12 +35,12 @@ class LoginStore: ObservableObject {
                 return
             }
             do {
-                try db.createTable(table: Contact.self)
+                try db.createTable(table: User.self)
             } catch {
                 print(db.errorMessage)
             }
             do {
-                try db.insertContact(contact: Contact(id: 0, name: "test", password: "password", country: "South Africa"))
+                try db.insertUser(contact: User(id: 0, name: "test", password: "password", country: "South Africa"))
             } catch {
                 print(db.errorMessage)
             }
@@ -57,12 +58,14 @@ class LoginStore: ObservableObject {
     }
 
     func login(name: String, password: String, country: String, onDone: (Bool) -> Void) {
+
         do {
             self.db = try SQLiteDatabase.open(path: self.filePath )
             if let first = self.db!.contact(id: 0) {
                 print("\(first.id) \(first.name)")
                 if first.name as String == name &&
                     first.password as String == password  {
+                    self.isLoggedIn.toggle()
                     onDone(true)
                 } else {
                     self.isValid.toggle()

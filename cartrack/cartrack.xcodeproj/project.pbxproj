@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA288FD925B350E70047AE54 /* SpinnerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA288FD825B350E70047AE54 /* SpinnerComponent.swift */; };
 		AA7F730825B310FD0005182D /* cartrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F730725B310FD0005182D /* cartrackApp.swift */; };
 		AA7F730A25B310FD0005182D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F730925B310FD0005182D /* ContentView.swift */; };
 		AA7F730C25B310FF0005182D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7F730B25B310FF0005182D /* Assets.xcassets */; };
@@ -24,8 +25,12 @@
 		AA7F737C25B322120005182D /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F737B25B322120005182D /* BindingExtension.swift */; };
 		AA7F738125B32ADA0005182D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F738025B32ADA0005182D /* ViewExtensions.swift */; };
 		AAA1084E25B32D9000B21FE1 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */; };
-		AAA1085425B32F8600B21FE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085325B32F8600B21FE1 /* Contact.swift */; };
-		AAA1085C25B3450200B21FE1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085B25B3450200B21FE1 /* UsersView.swift */; };
+		AAA1085425B32F8600B21FE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085325B32F8600B21FE1 /* User.swift */; };
+		AAA1085C25B3450200B21FE1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085B25B3450200B21FE1 /* ContactsView.swift */; };
+		AAA1086125B3499500B21FE1 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086025B3499500B21FE1 /* ContactStore.swift */; };
+		AAA1086925B34B7E00B21FE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086825B34B7E00B21FE1 /* Contact.swift */; };
+		AAF59CF025B3621300FBFCE8 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CEF25B3621300FBFCE8 /* ContactView.swift */; };
+		AAF59CF525B3627F00FBFCE8 /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA288FD825B350E70047AE54 /* SpinnerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerComponent.swift; sourceTree = "<group>"; };
 		AA7F730425B310FD0005182D /* cartrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7F730725B310FD0005182D /* cartrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartrackApp.swift; sourceTree = "<group>"; };
 		AA7F730925B310FD0005182D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,8 +75,12 @@
 		AA7F737B25B322120005182D /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 		AA7F738025B32ADA0005182D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
-		AAA1085325B32F8600B21FE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		AAA1085B25B3450200B21FE1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		AAA1085325B32F8600B21FE1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AAA1085B25B3450200B21FE1 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		AAA1086025B3499500B21FE1 /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
+		AAA1086825B34B7E00B21FE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		AAF59CEF25B3621300FBFCE8 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +187,8 @@
 				AA7F730925B310FD0005182D /* ContentView.swift */,
 				AA7F735125B313F50005182D /* MainView.swift */,
 				AA7F736D25B316440005182D /* BlankView.swift */,
-				AAA1085B25B3450200B21FE1 /* UsersView.swift */,
+				AAA1085B25B3450200B21FE1 /* ContactsView.swift */,
+				AAF59CEF25B3621300FBFCE8 /* ContactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				AA7F735F25B314860005182D /* ViewComponent.swift */,
+				AA288FD825B350E70047AE54 /* SpinnerComponent.swift */,
+				AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 				AA7F736525B314AA0005182D /* NavigationStore.swift */,
 				AA7F737225B31B3C0005182D /* LoginStore.swift */,
 				AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */,
+				AAA1086025B3499500B21FE1 /* ContactStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -212,7 +226,8 @@
 		AAA1085225B32F7900B21FE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AAA1085325B32F8600B21FE1 /* Contact.swift */,
+				AAA1085325B32F8600B21FE1 /* User.swift */,
+				AAA1086825B34B7E00B21FE1 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,16 +362,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA1085425B32F8600B21FE1 /* Contact.swift in Sources */,
+				AAA1085425B32F8600B21FE1 /* User.swift in Sources */,
 				AA7F738125B32ADA0005182D /* ViewExtensions.swift in Sources */,
 				AA7F730A25B310FD0005182D /* ContentView.swift in Sources */,
+				AAF59CF525B3627F00FBFCE8 /* HeaderComponent.swift in Sources */,
+				AA288FD925B350E70047AE54 /* SpinnerComponent.swift in Sources */,
 				AAA1084E25B32D9000B21FE1 /* SQLiteDatabase.swift in Sources */,
+				AAA1086925B34B7E00B21FE1 /* Contact.swift in Sources */,
+				AAA1086125B3499500B21FE1 /* ContactStore.swift in Sources */,
 				AA7F730825B310FD0005182D /* cartrackApp.swift in Sources */,
-				AAA1085C25B3450200B21FE1 /* UsersView.swift in Sources */,
+				AAA1085C25B3450200B21FE1 /* ContactsView.swift in Sources */,
 				AA7F736025B314860005182D /* ViewComponent.swift in Sources */,
 				AA7F733E25B3122C0005182D /* LoginView.swift in Sources */,
 				AA7F735225B313F50005182D /* MainView.swift in Sources */,
 				AA7F737C25B322120005182D /* BindingExtension.swift in Sources */,
+				AAF59CF025B3621300FBFCE8 /* ContactView.swift in Sources */,
 				AA7F737325B31B3C0005182D /* LoginStore.swift in Sources */,
 				AA7F736E25B316440005182D /* BlankView.swift in Sources */,
 				AA7F733625B311D40005182D /* BottomSheetView.swift in Sources */,

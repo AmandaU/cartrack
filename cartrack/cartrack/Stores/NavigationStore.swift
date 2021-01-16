@@ -12,8 +12,8 @@ class NavigationStore: ObservableObject {
     enum Screen {
         case none
         case main
-        case users
-        case user
+        case contacts
+        case contact
         case map
     }
     

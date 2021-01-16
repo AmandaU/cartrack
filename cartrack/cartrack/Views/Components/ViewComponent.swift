@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-// TODO: Consolidate all screens to just use this component
 struct ViewComponent: View {
     @EnvironmentObject var navigationStore:  NavigationStore
 

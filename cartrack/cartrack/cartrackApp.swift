@@ -16,6 +16,7 @@ struct cartrackApp: App {
             ContentView()
                 .environmentObject(NavigationStore())
                 .environmentObject(LoginStore())
+                .environmentObject(ContactStore())
 
         }
         .onChange(of: scenePhase) { (newScenePhase) in

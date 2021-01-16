@@ -12,6 +12,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var loginStore:  LoginStore
     @EnvironmentObject var navigationStore:  NavigationStore
+    @Binding var bottomSheetShown: Bool
     @State var name: String = ""
     @State var password: String = ""
     @State var country: String = ""
@@ -75,11 +76,14 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .show(isVisible: .constant(!self.loginStore.isValid))
             LoginButton(onLoggingIn: {
+
                 self.loginStore.login(name: self.name, password: self.password, country: self.country) { (done) in
                     if (done) {
-                        self.navigationStore.navigate(screen: .users)
+                        self.bottomSheetShown.toggle()
+                        self.navigationStore.navigate(screen: .contacts)
                     }
                 }
+
             })
                 .padding(.horizontal)
 

@@ -92,8 +92,8 @@ extension SQLiteDatabase {
 }
 
 extension SQLiteDatabase {
-    func insertContact(contact: Contact) throws {
-        let insertSql = "INSERT INTO Contact (Id, Name, Password, Country) VALUES (?, ?,?,?);"
+    func insertUser(contact: User) throws {
+        let insertSql = "INSERT INTO User (Id, Name, Password, Country) VALUES (?, ?,?,?);"
         let insertStatement = try prepareStatement(sql: insertSql)
         defer {
             sqlite3_finalize(insertStatement)
@@ -117,8 +117,8 @@ extension SQLiteDatabase {
 }
 
 extension SQLiteDatabase {
-    func contact(id: Int32) -> Contact? {
-        let querySql = "SELECT * FROM Contact WHERE Id = ?;"
+    func contact(id: Int32) -> User? {
+        let querySql = "SELECT * FROM User WHERE Id = ?;"
         guard let queryStatement = try? prepareStatement(sql: querySql) else {
             return nil
         }
@@ -148,6 +148,6 @@ extension SQLiteDatabase {
         let password = String(cString: queryResultCol2)
         let country = String(cString: queryResultCol3)
 
-        return Contact(id: id, name: name, password: password, country: country)
+        return User(id: id, name: name, password: password, country: country)
     }
 }

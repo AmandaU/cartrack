@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var navigationStore:  NavigationStore
-
+    
     @State var bottomSheetShown = false
-
+    
     var body: some View {
-
+        
         ZStack{
-           ViewComponent(screen: .none, view: AnyView(BlankView()))
+            ViewComponent(screen: .none, view: AnyView(BlankView()))
             ViewComponent(screen: .main, view: AnyView(MainView()))
-            ViewComponent(screen: .users, view: AnyView(UsersView()))
-//            ViewComponent(screen: .users, view: AnyView(BlankView()))
-//            ViewComponent(screen: .map, view: AnyView(BlankView()))
+            ViewComponent(screen: .contacts, view: AnyView(ContactsView()))
+            ViewComponent(screen: .contact, view: AnyView(ContactView()))
+            //            ViewComponent(screen: .map, view: AnyView(BlankView()))
         }
         .onAppear {
             self.navigationStore.navigate(screen: .main)
         }
-//
-
-     }
+        //
+        
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
