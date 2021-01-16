@@ -9,13 +9,42 @@ import Foundation
 import SwiftUI
 
 struct ContactView: View {
+    @EnvironmentObject var contactStore: ContactStore
 
     var body: some View {
         ZStack {
             Background()
             VStack() {
                 HeaderComponent( title: "Contact")
-                ZStack {
+                ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(self.contactStore.contact?.name ?? "")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color.white)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(self.contactStore.contact?.email ?? "")
+                        .bold()
+                        .lineLimit(nil)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(self.contactStore.contact?.phone ?? "")
+                        .bold()
+                        .lineLimit(nil)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(self.contactStore.contact?.company.name ?? "")
+                        .font(.body)
+                        .bold()
+                        .lineLimit(nil)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 }
             }
         }
