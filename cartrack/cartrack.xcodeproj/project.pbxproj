@@ -22,6 +22,10 @@
 		AA7F736E25B316440005182D /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F736D25B316440005182D /* BlankView.swift */; };
 		AA7F737325B31B3C0005182D /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F737225B31B3C0005182D /* LoginStore.swift */; };
 		AA7F737C25B322120005182D /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F737B25B322120005182D /* BindingExtension.swift */; };
+		AA7F738125B32ADA0005182D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7F738025B32ADA0005182D /* ViewExtensions.swift */; };
+		AAA1084E25B32D9000B21FE1 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */; };
+		AAA1085425B32F8600B21FE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085325B32F8600B21FE1 /* Contact.swift */; };
+		AAA1085C25B3450200B21FE1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085B25B3450200B21FE1 /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		AA7F736D25B316440005182D /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		AA7F737225B31B3C0005182D /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
 		AA7F737B25B322120005182D /* BindingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
+		AA7F738025B32ADA0005182D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		AAA1085325B32F8600B21FE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		AAA1085B25B3450200B21FE1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		AA7F730625B310FD0005182D /* cartrack */ = {
 			isa = PBXGroup;
 			children = (
+				AAA1085225B32F7900B21FE1 /* Models */,
 				AA7F737A25B322020005182D /* Extensions */,
 				AA7F736425B3149A0005182D /* Stores */,
 				AA7F734B25B313590005182D /* Views */,
@@ -168,6 +177,7 @@
 				AA7F730925B310FD0005182D /* ContentView.swift */,
 				AA7F735125B313F50005182D /* MainView.swift */,
 				AA7F736D25B316440005182D /* BlankView.swift */,
+				AAA1085B25B3450200B21FE1 /* UsersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +195,7 @@
 			children = (
 				AA7F736525B314AA0005182D /* NavigationStore.swift */,
 				AA7F737225B31B3C0005182D /* LoginStore.swift */,
+				AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -193,8 +204,17 @@
 			isa = PBXGroup;
 			children = (
 				AA7F737B25B322120005182D /* BindingExtension.swift */,
+				AA7F738025B32ADA0005182D /* ViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AAA1085225B32F7900B21FE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAA1085325B32F8600B21FE1 /* Contact.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,8 +347,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA1085425B32F8600B21FE1 /* Contact.swift in Sources */,
+				AA7F738125B32ADA0005182D /* ViewExtensions.swift in Sources */,
 				AA7F730A25B310FD0005182D /* ContentView.swift in Sources */,
+				AAA1084E25B32D9000B21FE1 /* SQLiteDatabase.swift in Sources */,
 				AA7F730825B310FD0005182D /* cartrackApp.swift in Sources */,
+				AAA1085C25B3450200B21FE1 /* UsersView.swift in Sources */,
 				AA7F736025B314860005182D /* ViewComponent.swift in Sources */,
 				AA7F733E25B3122C0005182D /* LoginView.swift in Sources */,
 				AA7F735225B313F50005182D /* MainView.swift in Sources */,

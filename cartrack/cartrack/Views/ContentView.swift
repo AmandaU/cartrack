@@ -17,7 +17,7 @@ struct ContentView: View {
         ZStack{
            ViewComponent(screen: .none, view: AnyView(BlankView()))
             ViewComponent(screen: .main, view: AnyView(MainView()))
-//            ViewComponent(screen: .user, view: AnyView(BlankView()))
+            ViewComponent(screen: .users, view: AnyView(UsersView()))
 //            ViewComponent(screen: .users, view: AnyView(BlankView()))
 //            ViewComponent(screen: .map, view: AnyView(BlankView()))
         }
