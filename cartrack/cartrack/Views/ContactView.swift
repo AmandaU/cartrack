@@ -118,7 +118,6 @@ private struct ImageView: View {
                 .resizable()
                 .cornerRadius(18)
                 .aspectRatio(contentMode: .fit)
-                //.frame(width:100, height:100)
                 .onReceive(imageLoader.didChange) { data in
                 self.image = UIImage(data: data) ?? UIImage()
         }
