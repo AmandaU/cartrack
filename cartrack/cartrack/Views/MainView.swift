@@ -14,14 +14,15 @@ struct MainView: View {
 
     var body: some View {
         ZStack {
-            Background()
+            BackgroundComponent()
             GeometryReader { geometry in
                 VStack {
+                    Spacer()
                     Image("cartrack")
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
-                        .padding(.top, 30)
-                        .padding(.horizontal)
-                        .cornerRadius(10)
+                        .frame(width: 200, height: 200, alignment: .center)
+                     .padding(.horizontal)
+                        .cornerRadius(100)
+                    Spacer()
                     LoginButton(bottomSheetShown: self.$bottomSheetShown)
                     Spacer()
                 }
@@ -42,14 +43,6 @@ struct MainView: View {
         //            .onAppear {
         //                self.bottomSheetShown = !self.loginStore.isLoggedIn
         //            }
-    }
-}
-
-private struct Background: View {
-    var body: some View {
-        Rectangle()
-            .fill(Color("orange"))
-            .edgesIgnoringSafeArea(.all)
     }
 }
 

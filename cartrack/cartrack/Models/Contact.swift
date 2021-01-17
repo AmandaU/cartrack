@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Response: Codable {
     var contacts: [Contact]
@@ -33,6 +34,23 @@ struct address: Codable {
 struct location: Codable {
     let lat: String
     let lng: String
+
+    var latitude: Double {
+        return Double(lat) ?? 0
+    }
+
+    var longitude: Double {
+        return Double(lng) ?? 0
+    }
+
+    var coordinate: CLLocationCoordinate2D {
+       return  CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case lat
+        case lng
+    }
 }
 
 struct company: Codable {

@@ -83,7 +83,6 @@ struct LoginView: View {
                         self.navigationStore.navigate(screen: .contacts)
                     }
                 }
-
             })
                 .padding(.horizontal)
 
