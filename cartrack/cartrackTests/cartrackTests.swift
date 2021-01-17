@@ -10,12 +10,25 @@ import XCTest
 
 class cartrackTests: XCTestCase {
 
+    var store: ContactStore!
+
     override func setUpWithError() throws {
+        self.store = ContactStore()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testGetContact_Success() {
+        let validation = expectation(description: "FullFill")
+        self.store.getContacts {
+            validation.fulfill()
+        }
+        self.waitForExpectations(timeout: 10) { error in
+            XCTAssertTrue(!self.store.contacts.isEmpty)
+        }
     }
 
     func testExample() throws {

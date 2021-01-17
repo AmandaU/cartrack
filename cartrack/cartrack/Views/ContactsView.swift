@@ -69,16 +69,14 @@ struct ContactsView: View {
                         maxHeight: geometry.size.height * 0.88
 
                     ) {
-
                             MapView(bottomSheetShown: self.$bottomSheetShown)
-
                     }
                     .animation(.easeInOut)
                 }
             }
         }
         .onAppear{
-            self.contactStore.getUsers ()
+            self.contactStore.getContacts {}
         }
     }
 }

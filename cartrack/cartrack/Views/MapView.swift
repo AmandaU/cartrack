@@ -41,10 +41,3 @@ struct MapView: View {
         }
     }
 }
-
-struct ContactAnnotationItem: Identifiable {
-    var coordinate: CLLocationCoordinate2D
-    let id = UUID()
-    let contactId: Int
-}
-

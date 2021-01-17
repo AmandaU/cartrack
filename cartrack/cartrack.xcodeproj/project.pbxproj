@@ -34,6 +34,11 @@
 		AAA1085C25B3450200B21FE1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085B25B3450200B21FE1 /* ContactsView.swift */; };
 		AAA1086125B3499500B21FE1 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086025B3499500B21FE1 /* ContactStore.swift */; };
 		AAA1086925B34B7E00B21FE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086825B34B7E00B21FE1 /* Contact.swift */; };
+		AADE092125B4946C00401DCE /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086025B3499500B21FE1 /* ContactStore.swift */; };
+		AADE092525B4947100401DCE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086825B34B7E00B21FE1 /* Contact.swift */; };
+		AADE092A25B495D500401DCE /* ContactAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE092925B495D500401DCE /* ContactAnnotationItem.swift */; };
+		AADE092E25B495E200401DCE /* ContactAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE092925B495D500401DCE /* ContactAnnotationItem.swift */; };
+		AADE093225B4963B00401DCE /* MapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81554D25B485B500F7EAD6 /* MapExtensions.swift */; };
 		AAF59CF025B3621300FBFCE8 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CEF25B3621300FBFCE8 /* ContactView.swift */; };
 		AAF59CF525B3627F00FBFCE8 /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +94,7 @@
 		AAA1085B25B3450200B21FE1 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		AAA1086025B3499500B21FE1 /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		AAA1086825B34B7E00B21FE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		AADE092925B495D500401DCE /* ContactAnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAnnotationItem.swift; sourceTree = "<group>"; };
 		AAF59CEF25B3621300FBFCE8 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +249,7 @@
 			children = (
 				AAA1085325B32F8600B21FE1 /* User.swift */,
 				AAA1086825B34B7E00B21FE1 /* Contact.swift */,
+				AADE092925B495D500401DCE /* ContactAnnotationItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -397,6 +404,7 @@
 				AAF59CF025B3621300FBFCE8 /* ContactView.swift in Sources */,
 				AA7F737325B31B3C0005182D /* LoginStore.swift in Sources */,
 				AA7F736E25B316440005182D /* BlankView.swift in Sources */,
+				AADE092A25B495D500401DCE /* ContactAnnotationItem.swift in Sources */,
 				AA81553C25B4505F00F7EAD6 /* MapView.swift in Sources */,
 				AA81554625B478A400F7EAD6 /* RoundedRectangle.swift in Sources */,
 				AA7F733625B311D40005182D /* BottomSheetView.swift in Sources */,
@@ -408,6 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADE092E25B495E200401DCE /* ContactAnnotationItem.swift in Sources */,
+				AADE092525B4947100401DCE /* Contact.swift in Sources */,
+				AADE093225B4963B00401DCE /* MapExtensions.swift in Sources */,
+				AADE092125B4946C00401DCE /* ContactStore.swift in Sources */,
 				AA7F731A25B311000005182D /* cartrackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

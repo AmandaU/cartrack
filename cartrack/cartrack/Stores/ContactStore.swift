@@ -16,7 +16,7 @@ class ContactStore: ObservableObject {
     @Published var annotationItems = [ContactAnnotationItem]()
     @Published var isContact = false
 
-    func getUsers() {
+    func getContacts(onDone: @escaping () ->Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
             print("Invalid URL")
             return
@@ -49,9 +49,9 @@ class ContactStore: ObservableObject {
                             return ContactAnnotationItem(coordinate:  coordinate, contactId: contact.id)
                         })
                     }
-                    return
+                    onDone()
+                     return
                 }
-
             }
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
