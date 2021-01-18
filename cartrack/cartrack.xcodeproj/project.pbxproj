@@ -34,6 +34,7 @@
 		AAA1085C25B3450200B21FE1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1085B25B3450200B21FE1 /* ContactsView.swift */; };
 		AAA1086125B3499500B21FE1 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086025B3499500B21FE1 /* ContactStore.swift */; };
 		AAA1086925B34B7E00B21FE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086825B34B7E00B21FE1 /* Contact.swift */; };
+		AACF921925B5841A00F1CD79 /* APiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA5AC225B5773400BD1EC7 /* APiService.swift */; };
 		AADE092125B4946C00401DCE /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086025B3499500B21FE1 /* ContactStore.swift */; };
 		AADE092525B4947100401DCE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1086825B34B7E00B21FE1 /* Contact.swift */; };
 		AADE092A25B495D500401DCE /* ContactAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE092925B495D500401DCE /* ContactAnnotationItem.swift */; };
@@ -422,6 +423,7 @@
 			files = (
 				AADE092E25B495E200401DCE /* ContactAnnotationItem.swift in Sources */,
 				AADE092525B4947100401DCE /* Contact.swift in Sources */,
+				AACF921925B5841A00F1CD79 /* APiService.swift in Sources */,
 				AADE093225B4963B00401DCE /* MapExtensions.swift in Sources */,
 				AADE092125B4946C00401DCE /* ContactStore.swift in Sources */,
 				AA7F731A25B311000005182D /* cartrackTests.swift in Sources */,

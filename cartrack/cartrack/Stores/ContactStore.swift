@@ -28,6 +28,7 @@ class ContactStore: ObservableObject {
                     let coordinate = CLLocationCoordinate2D(latitude: contact.address.geo.latitude, longitude: contact.address.geo.longitude)
                     return ContactAnnotationItem(coordinate:  coordinate, contactId: contact.id)
                 })
+                onDone()
             })
     }
 
