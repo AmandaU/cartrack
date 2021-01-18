@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var navigationStore:  NavigationStore
-    
     @State var bottomSheetShown = false
     
     var body: some View {
@@ -24,8 +23,6 @@ struct ContentView: View {
         .onAppear {
             self.navigationStore.navigate(screen: .main)
         }
-        //
-        
     }
 }
 

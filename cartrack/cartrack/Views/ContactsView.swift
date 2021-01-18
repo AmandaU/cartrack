@@ -11,7 +11,6 @@ import SwiftUI
 struct ContactsView: View {
     @EnvironmentObject var contactStore: ContactStore
     @EnvironmentObject var navigationStore: NavigationStore
-
     @State var bottomSheetShown = false
 
     private func onClick() {
@@ -82,7 +81,6 @@ struct ContactsView: View {
 }
 
 private struct Loading: View {
-
     var body: some View {
         VStack {
             SpinnerComponent(

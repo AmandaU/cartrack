@@ -40,9 +40,6 @@ struct MainView: View {
                 }
             }
         }
-        //            .onAppear {
-        //                self.bottomSheetShown = !self.loginStore.isLoggedIn
-        //            }
     }
 }
 

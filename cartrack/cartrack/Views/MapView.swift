@@ -15,7 +15,6 @@ struct MapView: View {
 
     var body: some View {
         ZStack {
-            // BackgroundComponent()
             VStack() {
                 HStack {
                     Spacer()
