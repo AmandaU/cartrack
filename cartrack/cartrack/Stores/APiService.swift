@@ -28,7 +28,6 @@ struct ApiService {
 
 enum ContactApi {
     static let apiService = ApiService()
-    static let base = URL(string: "https://jsonplaceholder.typicode.com/users")!
 }
 
 extension ContactApi {
