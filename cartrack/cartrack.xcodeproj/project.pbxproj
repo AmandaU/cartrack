@@ -39,6 +39,7 @@
 		AADE092A25B495D500401DCE /* ContactAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE092925B495D500401DCE /* ContactAnnotationItem.swift */; };
 		AADE092E25B495E200401DCE /* ContactAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE092925B495D500401DCE /* ContactAnnotationItem.swift */; };
 		AADE093225B4963B00401DCE /* MapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81554D25B485B500F7EAD6 /* MapExtensions.swift */; };
+		AAEA5AC325B5773400BD1EC7 /* APiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA5AC225B5773400BD1EC7 /* APiService.swift */; };
 		AAF59CF025B3621300FBFCE8 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CEF25B3621300FBFCE8 /* ContactView.swift */; };
 		AAF59CF525B3627F00FBFCE8 /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		AAA1086025B3499500B21FE1 /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		AAA1086825B34B7E00B21FE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		AADE092925B495D500401DCE /* ContactAnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAnnotationItem.swift; sourceTree = "<group>"; };
+		AAEA5AC225B5773400BD1EC7 /* APiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APiService.swift; sourceTree = "<group>"; };
 		AAF59CEF25B3621300FBFCE8 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		AAF59CF425B3627F00FBFCE8 /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +231,7 @@
 				AA7F737225B31B3C0005182D /* LoginStore.swift */,
 				AAA1084D25B32D9000B21FE1 /* SQLiteDatabase.swift */,
 				AAA1086025B3499500B21FE1 /* ContactStore.swift */,
+				AAEA5AC225B5773400BD1EC7 /* APiService.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				AA288FD925B350E70047AE54 /* SpinnerComponent.swift in Sources */,
 				AAA1084E25B32D9000B21FE1 /* SQLiteDatabase.swift in Sources */,
 				AAA1086925B34B7E00B21FE1 /* Contact.swift in Sources */,
+				AAEA5AC325B5773400BD1EC7 /* APiService.swift in Sources */,
 				AA81554E25B485B500F7EAD6 /* MapExtensions.swift in Sources */,
 				AAA1086125B3499500B21FE1 /* ContactStore.swift in Sources */,
 				AA7F730825B310FD0005182D /* cartrackApp.swift in Sources */,

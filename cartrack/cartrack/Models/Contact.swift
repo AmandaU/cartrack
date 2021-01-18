@@ -8,9 +8,9 @@
 import Foundation
 import MapKit
 
-struct Response: Codable {
-    var contacts: [Contact]
-}
+//struct Response: Codable {
+//    var contacts: [Contact]
+//}
 
 struct Contact: Codable {
     let id: Int

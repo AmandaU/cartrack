@@ -16,45 +16,19 @@ class ContactStore: ObservableObject {
     @Published var annotationItems = [ContactAnnotationItem]()
     @Published var isContact = false
 
-    func getContacts(onDone: @escaping () ->Void) {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
-            print("Invalid URL")
-            return
-        }
-        print(url)
-        var request = URLRequest(url: url)
-        let headers = [
-            // "Authorization": "Bearer \(accessToken)",
-            "Accept": "*/*",
-            "Content-Type": "application/json"
-        ]
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
+    var cancellationToken: AnyCancellable?
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            #if DEBUG
-            if let jsonString = String(data: data ?? Data(), encoding: .utf8) {
-                print(jsonString)
-            }
-            #endif
-            if let data = data {
-                let jsonDecoder = JSONDecoder()
-                if let decodedResponse = try? jsonDecoder.decode(Array<Contact>.self,from: data) {
-                    // we have good data – go back to the main thread
-                    DispatchQueue.main.async {
-                        // update our UI
-                        self.contacts = decodedResponse
-                        self.annotationItems = self.contacts.map({ (contact) -> ContactAnnotationItem in
-                            let coordinate = CLLocationCoordinate2D(latitude: contact.address.geo.latitude, longitude: contact.address.geo.longitude)
-                            return ContactAnnotationItem(coordinate:  coordinate, contactId: contact.id)
-                        })
-                    }
-                    onDone()
-                     return
-                }
-            }
-            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-        }.resume()
+    func getContacts(onDone: @escaping () ->Void) {
+        cancellationToken = ContactApi.getContacts()
+            .sink(receiveCompletion: { _ in
+            },
+            receiveValue: {
+                self.contacts = $0
+                self.annotationItems = self.contacts.map({ (contact) -> ContactAnnotationItem in
+                    let coordinate = CLLocationCoordinate2D(latitude: contact.address.geo.latitude, longitude: contact.address.geo.longitude)
+                    return ContactAnnotationItem(coordinate:  coordinate, contactId: contact.id)
+                })
+            })
     }
 
     var contactAnnotationItem: [ContactAnnotationItem] {
