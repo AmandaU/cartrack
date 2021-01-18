@@ -19,8 +19,21 @@ struct LoginView: View {
     @State private var selectedcountry: Int =  -1
 
     private func countryChange(_ tag: Int) {
-        self.country = self.loginStore.countries[tag]
-        self.loginStore.canLogin(name: self.name, password: self.password, country: self.country)
+        self.country = self.loginStore.countries[tag]    }
+
+    private func onClick() {
+        self.loginStore.login(name: self.name, password: self.password, country: self.country) { (done) in
+            if (done) {
+                self.bottomSheetShown.toggle()
+                self.navigationStore.navigate(screen: .contacts)
+            }
+        }
+    }
+
+    var canLogin: Bool {
+        return !self.name.isEmpty &&
+            !self.password.isEmpty &&
+            !self.country.isEmpty
     }
 
     var body: some View {
@@ -31,7 +44,6 @@ struct LoginView: View {
                 .padding(.horizontal)
             TextField("Enter username...", text: $name, onEditingChanged: { (changed) in
                 print("Username onEditingChanged - \(changed)")
-                self.loginStore.canLogin(name: self.name, password: self.password, country: self.country)
             }) {
                 print("Username onCommit")
             }
@@ -75,42 +87,19 @@ struct LoginView: View {
                 .foregroundColor(.red)
                 .padding(.horizontal)
                 .show(isVisible: .constant(!self.loginStore.isValid))
-            LoginButton(onLoggingIn: {
-
-                self.loginStore.login(name: self.name, password: self.password, country: self.country) { (done) in
-                    if (done) {
-                        self.bottomSheetShown.toggle()
-                        self.navigationStore.navigate(screen: .contacts)
-                    }
-                }
+            Button(action: self.onClick, label: {
+                Text("Login")
+                    .font(.body)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(Color("orange"))
             })
-                .padding(.horizontal)
+            .cornerRadius(10)
+            .padding(.horizontal)
+            .disabled(!self.canLogin)
+            .opacity(self.canLogin ? 1 : 0.5)
 
         }
-    }
-}
-
-private struct LoginButton: View {
-    @EnvironmentObject var loginStore:  LoginStore
-
-    @State var onLoggingIn: () -> Void
-
-    private func onClick() {
-        self.onLoggingIn()
-    }
-
-    var body: some View {
-        Button(action: self.onClick, label: {
-            Text("Login")
-                .font(.body)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding()
-                .foregroundColor(Color.white)
-                .background(Color("orange"))
-        })
-        .cornerRadius(10)
-        .padding(.horizontal)
-        .disabled(!self.loginStore.canLogin)
-        .opacity(self.loginStore.canLogin ? 1 : 0.5)
     }
 }

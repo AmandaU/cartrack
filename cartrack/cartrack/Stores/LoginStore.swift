@@ -11,11 +11,11 @@ import UIKit
 import SwiftUI
 
 class LoginStore: ObservableObject {
+    @Published var currentUser = User(id: -1, name: "", password: "", country: "")
     @Published var isLoggedIn = false
     @Published var errors = [Error]()
     @Published var isValid = true
-    @Published var canLogin = false
-
+  
     private var countryList = [String]()
 
     var db: SQLiteDatabase?
@@ -53,10 +53,6 @@ class LoginStore: ObservableObject {
         self.db = nil
     }
 
-    func canLogin(name: String, password: String, country: String) {
-        self.canLogin = !name.isEmpty  && !password.isEmpty && !country.isEmpty
-    }
-
     func login(name: String, password: String, country: String, onDone: (Bool) -> Void) {
 
         do {
@@ -65,6 +61,10 @@ class LoginStore: ObservableObject {
                 print("\(first.id) \(first.name)")
                 if first.name as String == name &&
                     first.password as String == password  {
+                    self.currentUser.id = first.id
+                    self.currentUser.name = first.name
+                    self.currentUser.password = first.password
+                    self.currentUser.country = first.country
                     self.isLoggedIn.toggle()
                     onDone(true)
                 } else {

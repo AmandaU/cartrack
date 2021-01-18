@@ -9,10 +9,10 @@ import Foundation
 
 
 struct User {
-  let id: Int32
-  let name: String
-  let password: String
-  let country: String
+  var id: Int32
+  var name: String
+  var password: String
+  var country: String
 }
 
 extension User: SQLTable {
